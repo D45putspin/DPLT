@@ -14,7 +14,8 @@ jobs:
           password: ${{ secrets.pass }}
           script: |
           ls -la
-          ~/var/www
+          cd /var
+          cd www
           sudo git clone "https://github.com/D45putspin/DPLT"
           sudo rm -rf html
           sudo mv -T DPLT html
