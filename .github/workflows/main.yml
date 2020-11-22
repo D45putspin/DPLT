@@ -1,0 +1,14 @@
+name: Deploytest
+on: [push]
+jobs:
+  deploy:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checout@v1
+      - name: push to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.ip}}
+          username: ${{secrets.user}}
+          password: ${{secrets.pass}}
+          script: ls -la
