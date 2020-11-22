@@ -12,4 +12,9 @@ jobs:
           host: ${{ secrets.ip }}
           username: ${{ secrets.nome }}
           password: ${{ secrets.pass }}
-          script: ls -la
+          script: |
+          ls -la
+          cd /var/www
+          sudo git clone "https://github.com/D45putspin/DPLT"
+          sudo rm -rf html
+          sudo mv -T DPLT html
